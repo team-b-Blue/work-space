@@ -4,9 +4,22 @@
 const btn = document.getElementById('btn');
 if (btn) {
     btn.addEventListener('click', () => {
-        const genres = ['和食', '中華', '韓国料理', 'イタリアン', '洋食'];
-        const dishes = ['寿司', '天ぷら', 'うどん', '蕎麦', '鍋', '丼もの', 'とんかつ', '焼き鳥', '定食', 'おでん'];
+        // チェックボックスの選択状態を取得
+        let genres = [];
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
         
+        checkboxes.forEach((checkbox) => {
+            genres.push(checkbox.value);
+        });
+
+        const defaultGenres = ['和食', '中華', '韓国料理', 'イタリアン', '洋食'];
+        const dishes = ['寿司', '天ぷら', 'うどん', '蕎麦', '鍋', '丼もの', 'とんかつ', '焼き鳥', '定食', 'おでん'];
+
+        // ジャンルが何も選択されなかった場合はすべてのジャンルを選択
+        if(genres.length === 0){
+            genres = defaultGenres.slice(0, defaultGenres.length);
+        }
+
         // ジャンルリストからランダムに1つ選ぶ
         const genre = genres[Math.floor(Math.random() * genres.length)];
 
