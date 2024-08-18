@@ -5,15 +5,15 @@ const btn = document.getElementById('btn');
 if (btn) {
     btn.addEventListener('click', () => {
         const genres = ['和食', '中華', '韓国料理', 'イタリアン', '洋食'];
-        const dishes = ['寿司', '天ぷら', 'うどん', '蕎麦', '鍋', '丼もの', 'とんかつ', '焼き鳥', '定食', 'おでん'];
+        const dishes = {'和食':['寿司', '天ぷら', 'うどん', '蕎麦', '鍋', '丼もの', 'とんかつ', '焼き鳥', '定食', 'おでん'],'中華': ['餃子', '麻婆豆腐', '炒飯', '春巻き', '酢豚'],'韓国料理': ['キムチ', 'ビビンバ', 'サムゲタン', 'チヂミ', 'プルコギ'],'イタリアン': ['ピザ', 'パスタ', 'リゾット', 'カルパッチョ', 'ティラミス'],'洋食': ['ハンバーグ', 'オムライス', 'ステーキ', 'シチュー', 'グラタン']};
         
         // ジャンルリストからランダムに1つ選ぶ
         const genre = genres[Math.floor(Math.random() * genres.length)];
 
         // メニューリストからランダムに2つ選ぶ
-        const dish1Index = Math.floor(Math.random() * dishes.length);
-        const dish1 = dishes[dish1Index];
-        dishes.splice(dish1Index, 1); // 選ばれた要素をリストから削除
+        const dish1Index = Math.floor(Math.random() * dishes[genre].length);
+        const dish1 = dishes[genre][dish1Index];
+        dishes[genre].splice(dish1Index, 1); // 選ばれた要素をリストから削除
 
         const dish2 = dishes[Math.floor(Math.random() * dishes.length)];
 
