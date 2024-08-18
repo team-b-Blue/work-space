@@ -8,6 +8,23 @@ img {
 body {
     font-family: "Zen Kaku Gothic New", 'Montserrat', sans-serif;
 }
+.background {
+    width: 100vw;
+    min-height: 120vh;
+    background-image: url(images/modern-kitchen-table.webp);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    filter: brightness(60%);
+    z-index: -1;
+}
+
 .material-symbols-outlined {
     font-size: 2.5rem;
     color: #8c6239;
@@ -26,7 +43,30 @@ body {
     justify-content: center;
     align-items: baseline;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
 }
+.header-container h5 {
+    padding-top: 0.5rem;
+}
+.header-container h1 {
+    padding: 0 1rem;
+}
+
+.header-container h5,
+.header-container h1 {
+    margin: 0.1rem 0;
+}
+
+.genre-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .genre {
     text-align: center;
     margin-bottom: 2rem;
@@ -34,30 +74,11 @@ body {
     color: #ffc107;
 }
 
-.images {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 2rem; /* 画像間の隙間 */
-    width: 100%;
-    height: auto;
-    place-items: center;
-    margin-bottom: 5rem;
-}
-
-.images img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 画像を正方形に切り取る */
-    aspect-ratio: 1 / 1; /* 正方形を保つ */
-}
-
 .row {
-    height: auto; /* 画面全体の高さを指定 */
+    height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* 縦方向に中央揃え */
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -65,8 +86,8 @@ body {
     width: 75%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 左右中央に揃え */
-    align-items: center; /* 左右中央に揃え */
+    justify-content: center;
+    align-items: center;
     margin-top: 5rem;
 }
 .container {
@@ -87,7 +108,8 @@ body {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0.7);
+
 }
 .content-title {
     display: flex;
@@ -95,7 +117,7 @@ body {
     align-items: center;
 }
 .content-text {
-    word-wrap: break-word; /* テキストを折り返す */
+    word-wrap: break-word;
     margin: 0.5rem 0;
     text-align: left;
 }
@@ -104,17 +126,17 @@ body {
 
 }
 ul {
-    list-style-type: none; /* デフォルトのマーカーを非表示 */
+    list-style-type: none;
     padding: 0;
-    text-align: center; /* リスト全体を中央揃え */
+    text-align: center; 
 }
 
 ul li {
     font-size: 1.15rem;
     position: relative;
-    text-align: left; /* テキスト自体は左揃え */
-    margin-bottom: 0.2rem; /* 各リスト項目の下に余白を追加 */
-    padding-left: 1.5rem; /* カスタムマーカーのスペースを確保 */
+    text-align: left;
+    margin-bottom: 0.1rem;
+    padding-left: 1.5rem;
 }
 ul li:last-child {
     margin-bottom: 0;
@@ -128,30 +150,34 @@ ul li::before {
     transform: translateX(-50%); /* マーカーを中央に配置 */
 }
 
-
+/* ボタン */
 .button {
-    font-size: 1.1rem;
+    font-family: 'Montserrat';
+    font-size: 1.2rem;
+    font-weight: bold;
     width: 100%;
     background-color: #ffc107;
     border-radius: 7px;
     color: black;
     text-align: center;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
+    padding: 0.4rem;
+    margin: 1rem 0;
     cursor: pointer;
-    box-shadow: 0 4px #7a6200;
+    box-shadow: 0.5rem 0.5rem #171300;
 }
+
 .button:hover {
     opacity: 0.8;
 }
 .button:active {
-    box-shadow: 0 1px #7a6200;
-    transform: translateY(3px);
+    box-shadow: 0.25rem 0.255rem #171300;
+    transform: translate(0.25rem, 0.25rem);
 }
 .btn-width {
     width: 13rem;
     margin: 0 auto;
 }
+
 
 @media screen and (max-width: 1200px){
     .container {
@@ -174,6 +200,19 @@ ul li::before {
 .images {
     gap: 1.5rem;
 }
+.header-container h1 {
+    padding: 0 0.4rem;
+}
 }
 
+@media (min-width: 505px) {
+    .header-container {
+        flex-direction: row;
+    }
+    
+    .genre-container {
+        flex-direction: row;
+    }
+
+}
 
