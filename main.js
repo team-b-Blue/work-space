@@ -13,7 +13,13 @@ if (btn) {
         });
 
         const defaultGenres = ['和食', '中華', '韓国料理', 'イタリアン', '洋食'];
-        const dishes = ['寿司', '天ぷら', 'うどん', '蕎麦', '鍋', '丼もの', 'とんかつ', '焼き鳥', '定食', 'おでん'];
+        const dishes = {
+            '和食': ['寿司', '天ぷら', 'うどん', '蕎麦', '鍋', '丼もの', 'とんかつ', '焼き鳥', '定食', 'おでん'],
+            '中華': ['餃子', '麻婆豆腐', '炒飯', '春巻き', '酢豚'],
+            '韓国料理': ['キムチ', 'ビビンバ', 'サムゲタン', 'チヂミ', 'プルコギ'],
+            'イタリアン': ['ピザ', 'パスタ', 'リゾット', 'カルパッチョ', 'ティラミス'],
+            '洋食': ['ハンバーグ', 'オムライス', 'ステーキ', 'シチュー', 'グラタン']
+        };
 
         // ジャンルが何も選択されなかった場合はすべてのジャンルを選択
         if(genres.length === 0){
@@ -24,14 +30,18 @@ if (btn) {
         const genre = genres[Math.floor(Math.random() * genres.length)];
 
         // メニューリストからランダムに2つ選ぶ
-        const dish1Index = Math.floor(Math.random() * dishes.length);
-        const dish1 = dishes[dish1Index];
-        dishes.splice(dish1Index, 1); // 選ばれた要素をリストから削除
+        const dish1Index = Math.floor(Math.random() * dishes[genre].length);
+        const dish1 = dishes[genre][dish1Index];
+        dishes[genre].splice(dish1Index, 1); // 選ばれた要素をリストから削除
 
-        const dish2 = dishes[Math.floor(Math.random() * dishes.length)];
+        const dish2Index = Math.floor(Math.random() * dishes[genre].length);
+        const dish2 = dishes[genre][dish2Index];
+        dishes[genre].splice(dish2Index, 1);
 
+        const dish3Index = Math.floor(Math.random() * dishes[genre].length);
+        const dish3 = dishes[genre][dish3Index];
         // 結果をURLパラメータとしてindex.htmlに渡す
-        window.location.href = `index.html?genre=${encodeURIComponent(genre)}&dish1=${encodeURIComponent(dish1)}&dish2=${encodeURIComponent(dish2)}`;
+        window.location.href = `index.html?genre=${encodeURIComponent(genre)}&dish1=${encodeURIComponent(dish1)}&dish2=${encodeURIComponent(dish2)}&dish3=${encodeURIComponent(dish3)}`;
     });
 }
 
@@ -39,12 +49,14 @@ if (btn) {
 const genreElement = document.getElementById('genre');
 const dish1Element = document.getElementById('dish1');
 const dish2Element = document.getElementById('dish2');
-
-if (genreElement && dish1Element && dish2Element) {
+const dish3Element = document.getElementById('dish3')
+if (genreElement && dish1Element && dish2Element&& dish3Element) {
     const params = new URLSearchParams(window.location.search);
     const genre = params.get('genre');
     const dish1 = params.get('dish1');
     const dish2 = params.get('dish2');
+    const dish3 = params.get('dish3');
+    
 
     if (genre) {
         genreElement.textContent = genre;
@@ -63,6 +75,11 @@ if (genreElement && dish1Element && dish2Element) {
     } else {
         dish2Element.textContent = 'メニューがありません';
     }
+
+    if (dish3) {  
+        dish3Element.textContent = dish3;
+    } else {
+        dish3Element.textContent = 'メニューがありません';
 }
 
 // 「もう一度トライする」ボタンの処理
@@ -73,4 +90,4 @@ if (retryBtn) {
     });
 }
 
-
+}
