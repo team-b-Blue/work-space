@@ -10,7 +10,7 @@ body {
 }
 .background {
     width: 100vw;
-    min-height: 120vh;
+    min-height: 160vh;
     background-image: url(images/modern-kitchen-table.webp);
     background-repeat: no-repeat;
     object-fit: cover;
