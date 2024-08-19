@@ -50,6 +50,7 @@ const genreElement = document.getElementById('genre');
 const dish1Element = document.getElementById('dish1');
 const dish2Element = document.getElementById('dish2');
 const dish3Element = document.getElementById('dish3')
+const textElement = document.getElementById('text');
 if (genreElement && dish1Element && dish2Element&& dish3Element) {
     const params = new URLSearchParams(window.location.search);
     const genre = params.get('genre');
@@ -81,6 +82,20 @@ if (genreElement && dish1Element && dish2Element&& dish3Element) {
     } else {
         dish3Element.textContent = 'メニューがありません';
 }
+
+    const messages = {
+        '和食': '和食は、クセのない味付けのものが多く、万人に愛されるジャンルです。ヘルシーな料理が多いので、健康志向の方にもおすすめです。カジュアルに楽しめる定食屋や居酒屋から、特別な日に訪れたい高級料亭まで、さまざまなシーンで利用できるのも和食の魅力です。家で自分好みの味付けの和食を作ってみるのも良いですね！',
+        '中華': '中華は、蒸し料理や炒め物、揚げ物など、様々なメニューを幅広く楽しめるジャンルです。大皿でシェアしながら楽しんでも良いですし、一人ひとりが好きなメニューを選ぶのも良いですね。お店での食事だけでなく、テイクアウトして家でゆっくりと楽しむのもおすすめです。家で中華料理作りに挑戦してみるのもいいですね！',
+        '韓国料理': '韓国料理は、ピリッと辛い味付けが特徴で、ご飯との相性が抜群です。野菜をたくさん使った料理も多いので、健康を意識した食事としてもおすすめです。食欲をそそる辛さが、一日の疲れを吹き飛ばしてくれることでしょう！自分で作ってみて、自分好みの辛さを見つけてみるのもいいですね！',
+        'イタリアン': 'イタリアンは、気軽に楽しめるカジュアルな食事から、特別な日のディナーまで幅広く楽しめるジャンルです。ピザやパスタでしっかりとした満足感を得るのも良いですし、色々な一品料理を楽しむのもおすすめです。お気に入りのお店を見つけてみるのはいかがですか？自分で作って、家でゆっくりとイタリアンを楽しむのも良いですね！',
+        '洋食': '洋食は、家庭料理やレストランの定番メニューとして広く親しまれています。米料理、煮込み料理、グリル、揚げ物など、さまざまなメニューの中からお好みの一品を選べるのが魅力です。自分のお気に入りの味を見つけてみるのはいかがですか？'
+    };
+    
+    if (genre && messages[genre]) {
+        textElement.innerHTML = messages[genre];
+    } else {
+        textElement.textContent = 'おいしい食事をお楽しみください！';
+    }
 
 // 「もう一度トライする」ボタンの処理
 const retryBtn = document.getElementById('retryBtn');
