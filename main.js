@@ -106,3 +106,24 @@ if (retryBtn) {
 }
 
 }
+
+// index.htmlの背景画像を、画面の一番上からRETRYボタンの下200pxもしくは300pxまでに設定する
+// 背景画像の高さを画面の高さによって調整する
+function adjustBackgroundHeight() {
+    const background = document.querySelector('.background');
+    const retryButton = document.querySelector('#retryBtn');
+    const retryButtonBottom = retryButton.offsetTop + retryButton.offsetHeight;
+    
+    let newHeight;
+
+    if (window.innerWidth >= 750 && window.innerHeight >= 1350) {
+        newHeight = retryButtonBottom + 300;
+    } else {
+        newHeight = retryButtonBottom + 200;
+    }
+
+    background.style.height = `${newHeight}px`;
+}
+
+window.addEventListener('load', adjustBackgroundHeight);
+window.addEventListener('resize', adjustBackgroundHeight);

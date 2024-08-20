@@ -10,7 +10,6 @@ body {
 }
 .background {
     width: 100vw;
-    height: 160vh;
     background-image: url(images/modern-kitchen-table.webp);
     background-repeat: no-repeat;
     object-fit: cover;
@@ -23,6 +22,7 @@ body {
     padding: 0;
     filter: brightness(45%);
     z-index: -1;
+    height: auto;
 }
 
 .material-symbols-outlined {
@@ -33,6 +33,10 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-top: 1rem;
+}
+.fa-kitchen-set {
+    font-size: 2rem;
+    color: #8c6239;
 }
 .header-container {
     margin-top: 1rem;
@@ -72,7 +76,7 @@ body {
     color: #ffc107;
 }
 .genre-text {
-    margin: 0 auto;
+    margin: 1.25rem auto;
     width: 55%;
     text-align: left;
     padding-top: 1rem;
@@ -180,8 +184,7 @@ ul li::before {
 .btn-width {
     width: 13rem;
     margin: 0 auto;
-}
-
+}   
 
 @media screen and (max-width: 1200px){
     .container {
@@ -227,6 +230,5 @@ ul li::before {
     .genre-container {
         flex-direction: row;
     }
-
 }
 
