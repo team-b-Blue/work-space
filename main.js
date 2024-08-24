@@ -49,8 +49,12 @@ if (btn) {
 const genreElement = document.getElementById('genre');
 const dish1Element = document.getElementById('dish1');
 const dish2Element = document.getElementById('dish2');
-const dish3Element = document.getElementById('dish3')
+const dish3Element = document.getElementById('dish3');
 const textElement = document.getElementById('text');
+const serchGenreElement = document.getElementById('searchRestaurantBtnGenre')
+const serchdish1Element = document.getElementById('searchRestaurantBtn1')
+const serchdish2Element = document.getElementById('searchRestaurantBtn2')
+const serchdish3Element = document.getElementById('searchRestaurantBtn3')
 if (genreElement && dish1Element && dish2Element&& dish3Element) {
     const params = new URLSearchParams(window.location.search);
     const genre = params.get('genre');
@@ -81,7 +85,7 @@ if (genreElement && dish1Element && dish2Element&& dish3Element) {
         dish3Element.textContent = dish3;
     } else {
         dish3Element.textContent = 'メニューがありません';
-}
+    }
 
     const messages = {
         '和食': '和食は、クセのない味付けのものが多く、万人に愛されるジャンルです。ヘルシーな料理が多いので、健康志向の方にもおすすめです。カジュアルに楽しめる定食屋や居酒屋から、特別な日に訪れたい高級料亭まで、さまざまなシーンで利用できるのも和食の魅力です。家で自分好みの味付けの和食を作ってみるのも良いですね！',
@@ -97,13 +101,26 @@ if (genreElement && dish1Element && dish2Element&& dish3Element) {
         textElement.textContent = 'おいしい食事をお楽しみください！';
     }
 
-// 「もう一度トライする」ボタンの処理
-const retryBtn = document.getElementById('retryBtn');
-if (retryBtn) {
-    retryBtn.addEventListener('click', () => {
-        window.location.href = 'button.html';
-    });
-}
+    const addStr = "が食べられる近くのお店を探す"
+    serchGenreElement.textContent = genre + addStr;
+    serchdish1Element.textContent = dish1 + addStr;
+    serchdish2Element.textContent = dish2 + addStr;
+    serchdish3Element.textContent = dish3 + addStr;
+
+    window.sharedData = {
+        share_genre: genre,
+        share_dish1: dish1,
+        share_dish2: dish2,
+        share_dish3: dish3
+    };
+
+    // 「もう一度トライする」ボタンの処理
+    const retryBtn = document.getElementById('retryBtn');
+    if (retryBtn) {
+        retryBtn.addEventListener('click', () => {
+            window.location.href = 'button.html';
+        });
+    }
 
 }
 
