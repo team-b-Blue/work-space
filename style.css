@@ -10,7 +10,6 @@ body {
 }
 .background {
     width: 100vw;
-    min-height: 160vh;
     background-image: url(images/modern-kitchen-table.webp);
     background-repeat: no-repeat;
     object-fit: cover;
@@ -21,8 +20,9 @@ body {
     left: 0;
     margin: 0;
     padding: 0;
-    filter: brightness(60%);
+    filter: brightness(45%);
     z-index: -1;
+    height: auto;
 }
 
 .material-symbols-outlined {
@@ -34,10 +34,12 @@ body {
     font-size: 2.5rem;
     margin-top: 1rem;
 }
+.fa-kitchen-set {
+    font-size: 2rem;
+    color: #8c6239;
+}
 .header-container {
     margin-top: 1rem;
-    position: absolute;
-    top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -47,7 +49,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    color: white;
+    color: #ffc107;
 }
 .header-container h5 {
     padding-top: 0.5rem;
@@ -73,6 +75,13 @@ body {
     font-weight: bold;
     color: #ffc107;
 }
+.genre-text {
+    margin: 1.25rem auto;
+    width: 55%;
+    text-align: left;
+    padding-top: 1rem;
+    color: white;
+}
 
 .row {
     height: auto;
@@ -88,7 +97,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
 }
 .container {
         margin: 0.5rem;
@@ -99,16 +107,16 @@ body {
 .content-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
     width: 100%;
 }
 
 .content {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    background-color: rgba(248, 249, 250, 0.7);
+    background-color: rgba(248, 249, 250, 0.6);
 
 }
 .content-title {
@@ -161,7 +169,7 @@ ul li::before {
     color: black;
     text-align: center;
     padding: 0.4rem;
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     cursor: pointer;
     box-shadow: 0.5rem 0.5rem #171300;
 }
@@ -176,8 +184,7 @@ ul li::before {
 .btn-width {
     width: 13rem;
     margin: 0 auto;
-}
-
+}   
 
 @media screen and (max-width: 1200px){
     .container {
@@ -190,8 +197,15 @@ ul li::before {
     }
     .col {
     width: 80%;
+    }
+    .genre-text {
+        width: 60%;
+    }
 }
-
+@media screen and (max-width: 950px){
+    .genre-text {
+        width: 70%;
+    }
 }
 @media screen and (max-width: 650px){
     .col {
@@ -203,6 +217,9 @@ ul li::before {
 .header-container h1 {
     padding: 0 0.4rem;
 }
+.genre-text {
+    width: 85%;
+}
 }
 
 @media (min-width: 505px) {
@@ -213,6 +230,5 @@ ul li::before {
     .genre-container {
         flex-direction: row;
     }
-
 }
 
