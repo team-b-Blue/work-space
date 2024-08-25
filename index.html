@@ -12,7 +12,8 @@
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Yomogi&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
+    
     <!-- icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- fontawesome -->
@@ -22,62 +23,79 @@
     
 </head>
 <body>
-    <div class="background"></div>
-        <div class="header-container">
-            <h5>今日のご飯に</h5>
-            <div class="genre-container">
-                <h1 class="genre" id="genre">和食</h1>
-                <h5>はどうですか？</h5>
+    <header>
+        <div class="background"></div>
+            <div class="header-container">
+                <h5>今日のご飯に</h5>
+                <div class="genre-container">
+                    <h1 class="genre" id="genre">和食</h1>
+                    <h5>はどうですか？</h5>
+                </div>
             </div>
-        </div>
-        <div class="genre-text">
-            <p id="text">
-                テキスト
-            </p>
-        </div>
+            <div class="genre-text">
+                <p id="text">
+                    テキスト
+                </p>
+            </div>
+    </header>
+    <main>
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="content-container">
-                        <div class="content">
-                            <div class="content-title">
-                                <span class="material-symbols-outlined">menu_book</span>
-                                <h4 class="px-3 fw-bold">おすすめメニュー</h4>
+                        <section id="menu">
+                            <div class="content">
+                                <div class="content-title">
+                                    <span class="material-symbols-outlined">menu_book</span>
+                                    <h4 class="px-3">おすすめメニュー</h4>
+                                </div>
+                                <div class="menu-list">
+                                    <ul>
+                                    <li id="dish1">メニュー名1</li>
+                                    <li id="dish2">メニュー名2</li>
+                                    <li id="dish3">メニュー名3</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="menu-list">
-                                <ul>
-                                <li id="dish1">メニュー名1</li>
-                                <li id="dish2">メニュー名2</li>
-                                <li id="dish3">メニュー名3</li>
-                                </ul>
+                        </section>
+
+                        <section id="restaurant">
+                            <div class="content">
+                                <div class="content-title mb-3">
+                                    <span class="material-symbols-outlined">food_bank</span>
+                                    <h4 class="px-3">近くのお店を探す</h4>
+                                </div>
+
+                                <div id="getting-location"></div>
+
+                                <div id="searchRestaurantContainerGenre" class="restaurants">
+                                    <button class="mx-2" id="searchRestaurantBtnGenre">近くのお店を探す</button>
+                                    <i class="fa-regular fa-circle-right"></i>
+                                </div>
+                                <div id="searchRestaurantContainer1" class="restaurants">
+                                    <button class="mx-2" id="searchRestaurantBtn1">近くのお店を探す</button>
+                                    <i class="fa-regular fa-circle-right"></i>
+                                </div>
+                                <div id="searchRestaurantContainer2" class="restaurants">
+                                    <button class="mx-2" id="searchRestaurantBtn2">近くのお店を探す</button>
+                                    <i class="fa-regular fa-circle-right"></i>
+                                </div>
+                                <div id="searchRestaurantContainer3" class="restaurants">
+                                    <button class="mx-2" id="searchRestaurantBtn3">近くのお店を探す</button>
+                                    <i class="fa-regular fa-circle-right"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="content">
-                            <div class="content-title">
-                                <span class="material-symbols-outlined">food_bank</span>
-                                <h4 class="px-3 fw-bold">お店</h4>
+                        </section>
+
+                        <section id="recipe">
+                            <div class="content">
+                                <div class="content-title">
+                                    <i class="fa-solid fa-kitchen-set"></i>
+                                    <h4 class="px-3 fw-bold">レシピ</h4>
+                                </div>
+                                <p class="content-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
                             </div>
-                            <p class="content-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                            <div class="restaurant-search btn-width">
-                                <button class="button" id="searchRestaurantBtnGenre">近くのお店を探す</button>
-                            </div>
-                            <div class="restaurant-search btn-width">
-                                <button class="button" id="searchRestaurantBtn1">近くのお店を探す</button>
-                            </div>
-                            <div class="restaurant-search btn-width">
-                                <button class="button" id="searchRestaurantBtn2">近くのお店を探す</button>
-                            </div>
-                            <div class="restaurant-search btn-width">
-                                <button class="button" id="searchRestaurantBtn3">近くのお店を探す</button>
-                            </div>
-                        </div>
-                        <div class="content">
-                            <div class="content-title">
-                                <i class="fa-solid fa-kitchen-set"></i>
-                                <h4 class="px-3 fw-bold">レシピ</h4>
-                            </div>
-                            <p class="content-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                        </div>
+                        </section>
                         <div class="btn-width">
                             <button class="button" id="retryBtn">RETRY!</button>
                         </div>
@@ -85,6 +103,7 @@
                 </div>
             </div>
         </div>
+    </main>
     <script src="main.js"></script>
     <script src="serch.js"></script>
 </body>

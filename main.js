@@ -101,7 +101,7 @@ if (genreElement && dish1Element && dish2Element&& dish3Element) {
         textElement.textContent = 'おいしい食事をお楽しみください！';
     }
 
-    const addStr = "が食べられる近くのお店を探す"
+    const addStr = "のお店を探す"
     serchGenreElement.textContent = genre + addStr;
     serchdish1Element.textContent = dish1 + addStr;
     serchdish2Element.textContent = dish2 + addStr;
