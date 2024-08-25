@@ -1,6 +1,6 @@
 'use strict';
 
-// button.html の処理
+// index.html の処理
 const btn = document.getElementById('btn');
 if (btn) {
     btn.addEventListener('click', () => {
@@ -40,12 +40,12 @@ if (btn) {
 
         const dish3Index = Math.floor(Math.random() * dishes[genre].length);
         const dish3 = dishes[genre][dish3Index];
-        // 結果をURLパラメータとしてindex.htmlに渡す
-        window.location.href = `index.html?genre=${encodeURIComponent(genre)}&dish1=${encodeURIComponent(dish1)}&dish2=${encodeURIComponent(dish2)}&dish3=${encodeURIComponent(dish3)}`;
+        // 結果をURLパラメータとしてsuggestion.htmlに渡す
+        window.location.href = `suggestion.html?genre=${encodeURIComponent(genre)}&dish1=${encodeURIComponent(dish1)}&dish2=${encodeURIComponent(dish2)}&dish3=${encodeURIComponent(dish3)}`;
     });
 }
 
-// index.html の処理
+// suggestion.html の処理
 const genreElement = document.getElementById('genre');
 const dish1Element = document.getElementById('dish1');
 const dish2Element = document.getElementById('dish2');
@@ -118,14 +118,14 @@ if (genreElement && dish1Element && dish2Element&& dish3Element) {
     const retryBtn = document.getElementById('retryBtn');
     if (retryBtn) {
         retryBtn.addEventListener('click', () => {
-            window.location.href = 'button.html';
+            window.location.href = 'index.html';
         });
     }
 
 }
 
 
-// index.htmlで、現在地取得中のメッセージを表示/非表示にする関数
+// suggestion.htmlで、現在地取得中のメッセージを表示/非表示にする関数
 function toggleLocationMessage(show) {
     const locationElement = document.getElementById('getting-location');
     if (locationElement) {
@@ -133,7 +133,7 @@ function toggleLocationMessage(show) {
     }
 }
 
-// index.htmlで、位置情報を取得し、Google Maps検索を行う関数
+// suggestion.htmlで、位置情報を取得し、Google Maps検索を行う関数
 function searchNearbyRestaurants(dishName) {
     if (navigator.geolocation) {
         toggleLocationMessage(true); // 現在地取得中のメッセージを表示
@@ -155,7 +155,7 @@ function searchNearbyRestaurants(dishName) {
     }
 }
 
-// index.htmlのお店を探すボタンのクリックイベントを設定する関数
+// suggestion.htmlのお店を探すボタンのクリックイベントを設定する関数
 function setupSearchButton(containerId, dishName) {
     const container = document.getElementById(containerId);
     if (container) {
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// index.htmlの背景画像を、画面の一番上からRETRYボタンの下200pxもしくは300pxまでに設定する
+// suggestion.htmlの背景画像を、画面の一番上からRETRYボタンの下200pxもしくは300pxまでに設定する
 // 背景画像の高さを画面の高さによって調整する
 function adjustBackgroundHeight() {
     const background = document.querySelector('.background');
