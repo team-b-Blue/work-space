@@ -79,7 +79,7 @@ body {
 }
 .genre-text {
     margin: 1.25rem auto;
-    width: 55%;
+    width: 50%;
     text-align: left;
     padding-top: 1rem;
     color: white;
@@ -94,7 +94,7 @@ body {
 }
 
 .col {
-    width: 75%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,7 +115,7 @@ body {
 
 .content {
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     background-color: rgba(248, 249, 250, 0.6);
@@ -232,23 +232,42 @@ ul li::before {
         padding: 1.5rem;
     }
     .col {
-    width: 80%;
+    width: 55%;
     }
     .genre-text {
-        width: 60%;
+        width: 55%;
     }
 }
 @media screen and (max-width: 950px){
     .genre-text {
+        width: 65%;
+    }
+    .col {
+        width: 60%;
+        }
+}
+@media screen and (max-width: 750px){
+    .genre-text {
         width: 70%;
     }
+    .col {
+        width: 70%;
+        }
 }
 @media screen and (max-width: 650px){
     .col {
-    width: 100%;
+    width: 75%;
 }
-.images {
-    gap: 1.5rem;
+.header-container h1 {
+    padding: 0 0.4rem;
+}
+.genre-text {
+    width: 75%;
+}
+}
+@media screen and (max-width: 500px){
+    .col {
+    width: 85%;
 }
 .header-container h1 {
     padding: 0 0.4rem;
@@ -257,16 +276,30 @@ ul li::before {
     width: 85%;
 }
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 430px){
     .col {
-    width: 98%;
+    width: 95%;
+}
+.header-container h1 {
+    padding: 0 0.4rem;
+}
+}
+@media screen and (max-width: 400px){
+    .col {
+    width: 100%;
 }
 .content-title h4 {
     font-size: 1.2rem;
 }
-.genre-text {
-    width: 80%;
-    margin: 0 auto;
+
+#getting-location {
+    font-size: 0.8rem;
+}
+.restaurants {
+    width: 14rem;
+}
+.restaurants button {
+    font-size: 0.9rem;
 }
 }
 
